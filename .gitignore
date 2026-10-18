@@ -1,0 +1,9 @@
+# Dependencias, builds e IDE
+node_modules/
+build/
+dist/
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,38 @@
+/* ============ Eagle Box · Git Evidence — Theme tokens ============ */
+:root {
+  --bg: #070b14;
+  --bg-2: #0b1220;
+  --panel: #0f1829;
+  --panel-2: #131f35;
+  --line: #1f2d47;
+  --line-2: #2a3b5c;
+  --text: #e6edf7;
+  --muted: #8a9bb8;
+  --dim: #5d6f8f;
+  --blue: #2563eb;
+  --blue-deep: #0b2a6b;
+  --cyan: #22d3ee;
+  --cyan-soft: rgba(34, 211, 238, .12);
+  --green: #39ff88;          /* verde terminal */
+  --green-soft: rgba(57, 255, 136, .10);
+  --amber: #fbbf24;
+  --red: #ff5f6d;
+  --violet: #a78bfa;
+  --radius: 14px;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", "Fira Code", ui-monospace, "Cascadia Code", Consolas, "DejaVu Sans Mono", monospace;
+  --shadow: 0 20px 60px -20px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .03);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+code, pre, .mono { font-family: var(--mono); }
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+::selection { background: rgba(34, 211, 238, .3); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }

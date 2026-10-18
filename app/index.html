@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eagle Box Git</title>
+<meta name="description" content="Evidencia GA7-220501096-AA1-EV05 · Versionamiento con Git · Eagle Box">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+<div class="app">
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M6 7.2v9.6M18 11.2c0 4-6 3-12 6.6"/></svg></div>
+      <div><b>Eagle Box</b><small>git · evidencia EV05</small></div>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#portada" class="active"><span class="n">01</span>Portada</a>
+      <a href="#diagramas"><span class="n">02</span>Diagramas del flujo</a>
+      <a href="#terminal"><span class="n">03</span>Terminales y GitHub</a>
+      <a href="#guion"><span class="n">04</span>Guion y buenas prácticas</a>
+      <a href="#exportar"><span class="n">05</span>Exportar y cierre</a>
+    </nav>
+    <div class="side-foot"><span class="dot"></span>git version 2.51.0<br>ficha 3336142 · ADSO</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="btn sm menu-btn" id="menuBtn" aria-label="Menú">☰ Menú</button>
+      <div class="crumbs">~/eagle-box <b>(master)</b> $ <span id="crumb">portada</span></div>
+      <button class="btn sm" id="btnPresent" title="Modo diapositivas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Presentar</button>
+      <button class="btn sm" id="btnPrint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-8h16v8h-2M7 14h10v7H7z"/></svg>PDF / Imprimir</button>
+      <button class="btn sm green" id="btnPptx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>PowerPoint</button>
+      <button class="btn sm primary" id="btnZip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>Descargar .ZIP</button>
+    </header>
+
+    <!-- ===== 01 PORTADA ===== -->
+    <section class="section hero-sec" id="portada" data-title="portada">
+      <div class="hero">
+        <canvas id="heroCanvas" aria-hidden="true"></canvas>
+        <div class="hero-inner">
+          <div>
+            <span class="chip g">GA7-220501096-AA1-EV05</span>
+            <h1>Evidencia GA7-220501096-AA1-EV05 – <span class="grad">Versionamiento con GIT</span></h1>
+            <p class="subtitle"><b>Proyecto Integrador: Eagle Box</b> – Plataforma de Logística de Última Milla</p>
+            <div class="tech-row">
+              <span class="tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M6 7.2v9.6M18 11.2c0 4-6 3-12 6.6"/></svg>Git</span>
+              <span class="tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 18a4.5 4.5 0 0 1-.5-9A6 6 0 0 1 18 9.5 4 4 0 0 1 17.5 18Z"/></svg>GitHub</span>
+              <span class="tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Microservicios</span>
+              <span class="tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M12 15h5"/></svg>Git Bash</span>
+              <span class="tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg>CI/CD</span>
+            </div>
+            <div class="hero-scroll">
+              <a class="btn primary" href="#terminal">▶ Ver terminales</a>
+              <a class="btn" href="#diagramas">Diagramas del flujo</a>
+            </div>
+          </div>
+          <div class="learner" id="learner">
+            <div class="badge-row"><div class="avatar">JB</div><div><span class="chip">APRENDIZ</span><h3>Jaime Andrés Bejarano Pautt</h3></div></div>
+            <dl class="kv">
+              <dt>aprendiz</dt><dd>Jaime Andrés Bejarano Pautt</dd>
+              <dt>ficha</dt><dd class="mono">3336142</dd>
+              <dt>programa</dt><dd>Análisis y Desarrollo de Software (ADSO) - SENA</dd>
+              <dt>instructor</dt><dd>Juan Antonio Hernández Estrada</dd>
+              <dt>fecha</dt><dd>Octubre 2026</dd>
+              <dt>evidencia</dt><dd>GA7-220501096-AA1-EV05</dd>
+              <dt>repositorio</dt><dd class="mono" style="font-size:12.5px">github.com/jaime-bejarano/Programa-Git</dd>
+            </dl>
+            <label class="field no-print">correo (se refleja en terminales y archivos):
+              <input id="emailInput" type="email" value="tu_correo@dominio.com" aria-label="Correo del aprendiz" spellcheck="false"></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 DIAGRAMAS ===== -->
+    <section class="section" id="diagramas" data-title="diagramas">
+      <div class="sec-head"><span class="eyebrow">// sección 02</span><h2>Diagramas ilustrativos del flujo de Git</h2>
+        <p>Del Working Directory al servidor en la nube, y cómo Eagle Box se apoya en el control de versiones.</p></div>
+      <div class="stack">
+        <div class="card">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><h3 style="margin:0">Entorno local vs. entorno remoto</h3><span class="chip">interactivo</span>
+            <button class="btn sm green no-print" id="btnFlow" style="margin-left:auto">▶ Reproducir flujo</button></div>
+          <p class="sub" style="margin-top:6px">Tres zonas locales (Working Directory, Staging Area, Local Repository) y un remoto (GitHub).</p>
+          <div id="flowHost"></div><div class="flow-info" id="flowInfo"></div>
+        </div>
+        <div class="card">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><h3 style="margin:0">Arquitectura de Eagle Box vinculada al control de versiones</h3><span class="chip a">arquitectura de referencia</span></div>
+          <p class="sub" style="margin-top:6px">Un repositorio por microservicio, Pull Requests protegidos y CI/CD con GitHub Actions.</p>
+          <div id="archHost"></div><div class="flow-info" id="archInfo"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 TERMINAL ===== -->
+    <section class="section" id="terminal" data-title="terminales">
+      <div class="sec-head"><span class="eyebrow">// sección 03</span><h2>Terminales simuladas y repositorio en GitHub</h2>
+        <p>Recreación fiel de Git Bash con los datos del aprendiz. Pulsa <kbd>▶ Reproducir</kbd> para ver el tecleo paso a paso. Cada comando es reproducible con <code>scripts/setup-evidencia.sh</code> (incluido en el ZIP).</p></div>
+      <div class="steps-tabs" id="stepTabs" role="tablist"></div>
+      <div class="term-toolbar no-print">
+        <button class="btn sm green" id="tPlay">▶ Reproducir</button><button class="btn sm" id="tInstant">⏭ Mostrar todo</button><button class="btn sm" id="tReset">↺ Reiniciar</button>
+        <button class="btn sm spacer" id="tCopy">⧉ Copiar comandos</button>
+      </div>
+      <div id="termHost"></div>
+      <details class="note" id="termNote"><summary id="termNoteT"></summary><div class="nb" id="termNoteB"></div></details>
+
+      <div class="sec-head" style="margin-top:46px"><span class="eyebrow">// verificación remota</span><h2 style="font-size:26px">Repositorio «Programa-Git» en GitHub</h2>
+        <p>Raíz de archivos con <code>kotlin.txt</code>, historial de commits y el commit «Añadido datos.».</p></div>
+      <div class="steps-tabs no-print" id="ghTabs">
+        <button class="active" data-v="repo">Código<small>raíz del repositorio</small></button>
+        <button data-v="file">kotlin.txt<small>contenido</small></button>
+        <button data-v="commits">Commits<small>historial</small></button>
+      </div>
+      <div id="ghHost"></div>
+    </section>
+
+    <!-- ===== 04 GUION ===== -->
+    <section class="section" id="guion" data-title="guion">
+      <div class="sec-head"><span class="eyebrow">// sección 04</span><h2>Guion para la exposición en video</h2>
+        <p>Lectura completa, con tiempos y qué mostrar en pantalla en cada momento. Duración aproximada: 7 min 20 s.</p></div>
+      <div id="guionHost"></div>
+      <div class="sec-head" style="margin-top:44px"><h2 style="font-size:26px">Flujo académico vs. buenas prácticas profesionales</h2>
+        <p>Lo que se hizo en la evidencia y cómo se haría en un equipo real de Eagle Box.</p></div>
+      <div class="compare-wrap"><table class="compare"><thead><tr><th>Aspecto</th><th class="acad">Flujo académico (evidencia)</th><th class="pro">Práctica profesional</th></tr></thead><tbody id="compareBody"></tbody></table></div>
+      <div class="card" style="margin-top:18px"><h3>Ejemplo de Pull Request + Branch Protection</h3>
+        <div class="two-col"><pre class="tree" style="margin:0"><i>$</i> git switch -c feature/author-data
+<i>$</i> git add kotlin.txt
+<i>$</i> git commit -m "docs(config): add author data"
+<i>$</i> git push -u origin feature/author-data
+<b># → abrir Pull Request hacia main</b></pre>
+          <div style="font-size:14px;color:#c9d6ec"><b>Reglas sobre <code style="color:var(--green)">main</code> (Settings → Branches):</b><ul style="margin:8px 0 0;padding-left:18px"><li>Require a pull request before merging (1 aprobación)</li><li>Require status checks to pass (CI)</li><li>Block force pushes · Restrict deletions</li><li>Require signed commits (opcional)</li></ul></div></div></div>
+    </section>
+
+    <!-- ===== 05 EXPORTAR ===== -->
+    <section class="section" id="exportar" data-title="exportar">
+      <div class="sec-head"><span class="eyebrow">// sección 05</span><h2>Generación y exportación de archivos</h2>
+        <p>Todo lo necesario para entregar la evidencia: código fuente, scripts reproducibles, capturas, guion y presentación.</p></div>
+      <div class="export-grid no-print">
+        <div class="card export-card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 7v12h16V7M4 7l2-3h12l2 3M12 11v6m0 0-2-2m2 2 2-2"/></svg></div>
+          <h3>Paquete .ZIP</h3><p class="sub">Fuente modular del dashboard, scripts <code>.sh</code>/<code>.ps1</code>, capturas, guion y PowerPoint. Se genera en tu navegador.</p><button class="btn primary" id="btnZip2">Descargar .ZIP</button></div>
+        <div class="card export-card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>Presentación PowerPoint</h3><p class="sub">Deck futurista de 16 diapositivas con portada, introducción, capturas, conclusión y bibliografía.</p><button class="btn green" id="btnPptx2">Descargar .PPTX</button></div>
+        <div class="card export-card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-8h16v8h-2M7 14h10v7H7z"/></svg></div>
+          <h3>Diapositivas / PDF</h3><p class="sub">Modo presentación a pantalla completa (← →) o documento A4 horizontal listo para entregar.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="btnPresent2">Presentar</button><button class="btn" id="btnPrint2">Guardar PDF</button></div></div>
+      </div>
+      <div class="two-col" style="margin-top:18px">
+        <div class="card"><h3>Estructura del paquete</h3><div class="tree" id="treeBox"></div></div>
+        <div class="card"><h3>Conclusión</h3><ul id="conclusionList" style="padding-left:18px;color:#c9d6ec;font-size:14.5px"></ul>
+          <h3 style="margin-top:20px">Bibliografía</h3><ol class="bib" id="bibList"></ol></div>
+      </div>
+    </section>
+    <footer style="text-align:center;color:var(--dim);font:12px var(--mono);padding:24px 16px 80px">Eagle Box · Evidencia GA7-220501096-AA1-EV05 · Jaime Andrés Bejarano Pautt · Ficha 3336142 · SENA ADSO</footer>
+  </div>
+</div>
+
+<div class="slide-hud"><button class="btn sm" id="hudPrev">←</button><span id="hudPos">1 / 5</span><button class="btn sm" id="hudNext">→</button><button class="btn sm" id="hudExit">Salir (Esc)</button></div>
+<div class="toast" id="toast" role="status"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/github-mock.js"></script>
+<script src="js/diagrams.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/export.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

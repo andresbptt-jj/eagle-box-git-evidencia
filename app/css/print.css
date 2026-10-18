@@ -1,0 +1,16 @@
+/* ============ Print / PDF (documento listo para entregar) ============ */
+@media print {
+  @page { size: A4 landscape; margin: 10mm; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: var(--bg) !important; }
+  .sidebar, .topbar, .slide-hud, .toast, .hero-scroll, .term-toolbar, .steps-tabs, .no-print { display: none !important; }
+  .app { display: block; }
+  body.present .section, .section { display: block !important; page-break-after: always; break-after: page; padding: 8mm 4mm; max-width: none; }
+  .hero { min-height: 0; }
+  .term-body { max-height: none; overflow: visible; }
+  .card, .win, .gh, .script-block { break-inside: avoid; box-shadow: none; }
+  details:not([open]) > *:not(summary) { display: block; }
+  details > summary::after { display: none; }
+  .print-only { display: block !important; }
+}
+.print-only { display: none; }
